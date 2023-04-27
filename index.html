@@ -40,9 +40,12 @@
 		<!-- Sidebar content -->
         <div class="ui vertical inverted sidebar menu visible">
             <div class="ui search">
-                <div class="ui icon input searchRecipe">
-                  <input class="prompt" type="text" placeholder="Search recipe...">
+                <form id="recipeForm" class="ui icon input searchRecipe">
+                  <input class="prompt" type="text" id="ingrediantInput" placeholder="Search recipe...">
                   <i class="search icon"></i>
+                  <button type="submit">Search</button>
+                </form>
+                <div class="results"></div>
                 </div>
                 <div id="searchHistory"></div>
               </div>
