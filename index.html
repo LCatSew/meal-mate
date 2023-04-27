@@ -5,7 +5,6 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
     <!-- Favicon/Touch Icon Settings -->
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
@@ -42,6 +41,19 @@
 	
 	<main>
 		<!-- Body content -->
+        <div class="ui search">
+            <div class="ui icon input">
+                <input class="prompt" type="text" placeholder="Search drinks...">
+                <i class="search icon"></i>
+            </div>
+            <div class="results">
+                <div class="result" data-search="Mojito">Mojito</div>
+                <div class="result" data-search="Margarita">Margarita</div>
+                <div class="result" data-search="Pina Colada">Pina Colada</div>
+                <div class="result" data-search="Bloody Mary">Bloody Mary</div>
+                <div class="result" data-search="Long Island Iced Tea">Long Island Iced Tea</div>
+            </div>
+        </div>
 	</main>
 	
 	<footer>
@@ -50,5 +62,23 @@
 
     <!-- Our JS -->
     <script src="./assets/js/script.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Initialize search bar
+            $('.ui.search').search({
+                source: [
+                    { title: "Mojito" },
+                    { title: "Margarita" },
+                    { title: "Pina Colada" },
+                    { title: "Bloody Mary" },
+                    { title: "Long Island Iced Tea" }
+                ],
+                onSelect: function(result, response) {
+                    // Perform action when a result is selected
+                    console.log('Selected:', result.title);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
