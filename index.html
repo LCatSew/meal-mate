@@ -34,21 +34,23 @@
         <div class="ui segment">
             <img class="ui centered medium image" src="./assets/img/logo.png">
         </div>
+        <!-- add <a class="item">Home</a> + <a class="item">About</a> + <a class="item">Contact</a> to header-->
 	</header>
 	
 	<aside>
 		<!-- Sidebar content -->
         <div class="ui vertical inverted sidebar menu visible">
             <div class="ui search">
-                <div class="ui icon input searchRecipe">
-                  <input class="prompt" type="text" placeholder="Search recipe...">
+                <form id="recipeForm" class="ui icon input searchRecipe">
+                  <input class="prompt" type="text" id="ingrediantInput" placeholder="Search recipe...">
                   <i class="search icon"></i>
-                </div>
+                  <button type="submit">Search</button>
+                </form>
                 <div class="results"></div>
-              </div>
-			<a class="item">Home</a>
-			<a class="item">About</a>
-			<a class="item">Contact</a>
+                <div id="searchHistory">
+                    
+                </div>
+            </div>
 		</div>
 
 	</aside>
@@ -57,8 +59,9 @@
 		<!-- Body content -->
         <div class="pusher">
 			<div class="ui container">
-				<h1>This is a cool website!</h1>
+                <h1>This is a cool website!</h1>
 				<p>This recipe is really cool as well!</p>
+				<div id="searchResults"></div>
 			</div>
             <div id="search-results">
                 <div class="meals-list">
@@ -79,6 +82,7 @@
 	</footer>
 
     <!-- Our JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
