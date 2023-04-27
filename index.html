@@ -21,12 +21,9 @@
 	<!-- N/A -->
 
     <!-- Semantic UI Framework -->
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-    <script
-     src="https://code.jquery.com/jquery-3.1.1.min.js"
-     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-     crossorigin="anonymous"></script>
-    <script src="semantic/dist/semantic.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 
     <!-- Our CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -34,14 +31,36 @@
 <body>
 	<header>
 		<!-- Header content -->
+        <div class="ui segment">
+            <img class="ui centered medium image" src="./assets/img/logo.png">
+        </div>
 	</header>
 	
 	<aside>
 		<!-- Sidebar content -->
+        <div class="ui vertical inverted sidebar menu visible">
+            <div class="ui search">
+                <div class="ui icon input searchRecipe">
+                  <input class="prompt" type="text" placeholder="Search recipe...">
+                  <i class="search icon"></i>
+                </div>
+                <div class="results"></div>
+              </div>
+			<a class="item">Home</a>
+			<a class="item">About</a>
+			<a class="item">Contact</a>
+		</div>
+
 	</aside>
 	
 	<main>
 		<!-- Body content -->
+        <div class="pusher">
+			<div class="ui container">
+				<h1>This is a cool website!</h1>
+				<p>This recipe is really cool as well!</p>
+			</div>
+		</div>
 	</main>
 	
 	<footer>
