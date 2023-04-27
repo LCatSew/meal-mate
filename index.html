@@ -20,12 +20,9 @@
 	<!-- N/A -->
 
     <!-- Semantic UI Framework -->
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-    <script
-     src="https://code.jquery.com/jquery-3.1.1.min.js"
-     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-     crossorigin="anonymous"></script>
-    <script src="semantic/dist/semantic.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 
     <!-- Our CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -33,14 +30,50 @@
 <body>
 	<header>
 		<!-- Header content -->
+        <div class="ui segment">
+            <img class="ui centered medium image" src="./assets/img/logo.png">
+        </div>
+        <!-- add <a class="item">Home</a> + <a class="item">About</a> + <a class="item">Contact</a> to header-->
 	</header>
 	
 	<aside>
 		<!-- Sidebar content -->
+        <div class="ui vertical inverted sidebar menu visible">
+            <div class="ui search">
+                <form id="recipeForm" class="ui icon input searchRecipe">
+                  <input class="prompt" type="text" id="ingrediantInput" placeholder="Search recipe...">
+                  <i class="search icon"></i>
+                  <button type="submit">Search</button>
+                </form>
+                <div class="results"></div>
+                <div id="searchHistory">
+                    
+                </div>
+            </div>
+		</div>
+
 	</aside>
 	
 	<main>
 		<!-- Body content -->
+        <div class="pusher">
+			<div class="ui container">
+                <h1>This is a cool website!</h1>
+				<p>This recipe is really cool as well!</p>
+				<div id="searchResults"></div>
+			</div>
+            <div id="search-results">
+                <div class="meals-list">
+                    <ul>
+                        <li>
+                            <div class="card">
+                                
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+		</div>
         <div class="ui search">
             <div class="ui icon input">
                 <input class="prompt" type="text" placeholder="Search drinks...">
@@ -61,6 +94,7 @@
 	</footer>
 
     <!-- Our JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/script.js"></script>
     <script>
         $(document).ready(function() {
