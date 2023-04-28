@@ -37,13 +37,13 @@
 	</header>
 	
 	<aside>
-		<!-- Sidebar content -->
+        <!-- Sidebar content -->
         <!-- Forced visibility unless we want to add Semantic UI JS later -->
         <div class="ui vertical inverted sidebar menu visible large">
-            <div class="ui center aligned segment" style="max-width: 100%;">
+            <div class="ui center aligned segment">
               <div class="ui action input search">
-                <input type="text" placeholder="Search...">
-                <button class="ui icon button">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button class="ui icon button" id="searchButton">
                   <i class="search icon"></i>
                 </button>
               </div>
@@ -51,27 +51,17 @@
             <!-- Temporary class until CSS implementation -->
             <h3 class="item">Search History:</h3>
             <div id="searchHistory"></div>
-          </div>
-          
-
-        
-                  
-            
-                    
-                </div>
-            </div>
-		</div>
-
-	</aside>
-	
-	<main>
-		<!-- Body content -->
+          </div>   
+    </aside>
+    
+    <main>
+        <!-- Body content -->
         <div class="pusher">
-			<div class="ui container">
+            <div class="ui container">
                 <h1>This is a cool website!</h1>
-				<p>This recipe is really cool as well!</p>
-				<div id="searchResults"></div>
-			</div>
+                <p>This recipe is really cool as well!</p>
+                <div id="searchResults"></div>
+            </div>
             <div id="search-results">
                 <div class="meals-list">
                     <ul>
@@ -83,8 +73,8 @@
                     </ul>
                 </div>
             </div>
-		</div>
-	</main>
+        </div>
+    </main>
 	
 	<footer>
 		<!-- Footer content -->
