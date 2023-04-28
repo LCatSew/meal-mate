@@ -1,94 +1,123 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>MealMate</title>
-	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <head>
+    <title>MealMate</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Favicon/Touch Icon Settings -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
-    <link rel="manifest" href="./assets/img/site.webmanifest">
-    <link rel="mask-icon" href="./assets/img/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="./assets/img/favicon.ico">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="./assets/img/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/img/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="./assets/img/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta
+      name="msapplication-config"
+      content="./assets/img/browserconfig.xml"
+    />
+    <meta name="theme-color" content="#ffffff" />
 
     <!-- CSS Reset -->
-	<!-- N/A -->
-
-    <!-- Semantic UI Framework -->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 
     <!-- Our CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
-	<header>
-		<!-- Header content -->
-        <div class="ui segment">
-            <img class="ui centered medium image" src="./assets/img/logo.png">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    
+      <!-- Sidebar content -->
+     <div class="ui vertical inverted sidebar menu large">
+        <div class="ui center aligned segment">
+          <form class="ui action input search" id="recipeForm">
+            <input
+              class="prompt"
+              type="text"
+              id="searchInput"
+              placeholder="Search..."
+            />
+            <button class="ui icon button" id="searchButton">
+              <i class="search icon"></i>
+            </button>
+          </form>
         </div>
+        <!-- Temporary class until CSS implementation -->
+        <h3 class="item">Search History:</h3>
+        <div id="searchHistory"></div>
+      </div>
+    
+    <div class="pusher">
+      <header>
+        <!-- Header content -->
+        <div class="ui segment">
+          <img class="ui centered medium image" src="./assets/img/logo.png" />
+        </div>
+        <button class="ui button" id="toggleSidebar">Toggle Sidebar</button>
         <!-- add <a class="item">Home</a> + <a class="item">About</a> + <a class="item">Contact</a> to header-->
-	</header>
-	
-	<aside>
-		<!-- Sidebar content -->
-        <div class="ui vertical inverted sidebar menu visible">
-            <div class="ui search">
-                <form id="recipeForm" class="ui icon input searchRecipe">
-                  <input class="prompt" type="text" id="ingredientInput" placeholder="Search recipe...">
-                  <i class="search icon"></i>
-                  <button type="submit">Search</button>
-                </form>
-                <div class="results"></div>
-                <div id="searchHistory">
-                    
-                </div>
-            </div>
-		</div>
+      </header>
 
-	</aside>
-	
-	<main>
-		<!-- Body content -->
+      <main>
+        <!-- Body content -->
         <div class="pusher">
-			<div class="ui container">
-                <h1>This is a cool website!</h1>
-				<p>This recipe is really cool as well!</p>
-				<div id="searchResults"></div>
-			</div>
-            <div id="search-results">
-                <div class="meals-list">
-                    <ul>
-                        <li>
-                            <div class="card">
-                                <div class="object">
-                                    <a href="">
-                                        <span class="holder">
-                                            <img src="" alt="">
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+          <div class="ui container">
+            <h1>This is a cool website!</h1>
+            <p>This recipe is really cool as well!</p>
+            <div id="searchResults"></div>
+          </div>
+
+          <div id="search-results">
+            <div class="meals-list">
+              <ul>
+                <li>
+                  <div class="card">
+                    <div class="object">
+                      <a href="">
+                        <span class="holder">
+                          <img src="" alt="" />
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
-		</div>
-	</main>
-	
-	<footer>
-		<!-- Footer content -->
-	</footer>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+      <!-- Footer content -->
+    </footer>
 
     <!-- Our JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <script src="./assets/js/script.js"></script>
-</body>
+  </body>
 </html>
