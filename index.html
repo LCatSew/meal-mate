@@ -38,14 +38,28 @@
 	
 	<aside>
 		<!-- Sidebar content -->
-        <div class="ui vertical inverted sidebar menu visible">
-            <div class="ui search">
-                <div class="ui icon input searchRecipe">
-                  <input class="prompt" type="text" placeholder="Search recipe...">
+        <!-- Forced visibility unless we want to add Semantic UI JS later -->
+        <div class="ui vertical inverted sidebar menu visible large">
+            <div class="ui center aligned segment" style="max-width: 100%;">
+              <div class="ui action input search">
+                <input type="text" placeholder="Search...">
+                <button class="ui icon button">
                   <i class="search icon"></i>
-                </div>
-                <div id="searchHistory"></div>
+                </button>
               </div>
+            </div>
+            <!-- Temporary class until CSS implementation -->
+            <h3 class="item">Search History:</h3>
+            <div id="searchHistory"></div>
+          </div>
+          
+
+        
+                  
+            
+                    
+                </div>
+            </div>
 		</div>
 
 	</aside>
@@ -54,8 +68,21 @@
 		<!-- Body content -->
         <div class="pusher">
 			<div class="ui container">
+                <h1>This is a cool website!</h1>
+				<p>This recipe is really cool as well!</p>
 				<div id="searchResults"></div>
 			</div>
+            <div id="search-results">
+                <div class="meals-list">
+                    <ul>
+                        <li>
+                            <div class="card">
+                                
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 		</div>
 	</main>
 	
@@ -64,6 +91,7 @@
 	</footer>
 
     <!-- Our JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
