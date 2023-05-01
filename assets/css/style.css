@@ -6,3 +6,15 @@
     --citrus: #E8871E;
     /* Color pallete ^^*/
 }
+
+#toggleSidebar {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+}
+
+nav {
+    background-color: black;
+    color: white;
+}
