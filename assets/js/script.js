@@ -69,3 +69,8 @@ function saveResults(){
     $("#searchHistory").append(historyBtn);
   });
 };
+
+
+$('.longer.modal')
+    .modal('show')
+;
