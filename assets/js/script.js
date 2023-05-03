@@ -94,7 +94,6 @@ function saveResults() {
 // ------------------------------------
 // Search - test menu option
 // ------------------------------------
-var testMenuDiv = document.getElementById("testMenu");
 
 
 // ------------------------------------
@@ -108,7 +107,6 @@ var testMenuDiv = document.getElementById("testMenu");
 // in final!!
 // ------------------------------------
 // Enable the test menu:
-testNav = document.getElementById('testMenu');
 
 $('#searchButton').click(function () {
   var resultGet = $('#searchInput').val();
