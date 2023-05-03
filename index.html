@@ -16,6 +16,10 @@
   <meta name="msapplication-config" content="./assets/img/browserconfig.xml" />
   <meta name="theme-color" content="#ffffff" />
 
+  <!--Google Font src-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <!-- CSS Reset -->
   <!-- https://github.com/necolas/normalize.css/ -->
   <link rel="stylesheet" href="./assets/css/normalize.css" />
@@ -29,26 +33,30 @@
 
 <body>
   <!-- Sidebar content -->
-  <div class="ui vertical inverted sidebar menu large">
-    <div class="ui center aligned segment">
-      <form class="ui action input search" id="recipeForm">
-        <input class="prompt" type="text" id="searchInput" placeholder="Search..." />
-        <button class="ui icon button" id="searchButton">
-          <i class="search icon"></i>
-        </button>
-      </form>
-    </div>
+    <aside>
+        <div class="ui vertical inverted sidebar menu large" id="sidebar">
+            <div class="ui center aligned segment" id ="formBackground">
+            <form class="ui action input search" id="recipeForm">
+                <input class="prompt" type="text" id="searchInput" placeholder="Search..." />
+                <button class="ui icon button" id="searchButton">
+                <i class="search icon"></i>
+                </button>
+            </form>
+        </div>
 
-    <!-- Temporary class until CSS implementation -->
-    <h3 class="item">Search History:</h3>
-    <div id="searchHistory"></div>
-  </div>
+        <!-- Temporary class until CSS implementation -->
+        <h3 class="item" id="shTitle">Search History:</h3>
+        <div id="searchHistory"></div>
+        </div>
+    </aside>
 
   <div class="pusher">
     <header>
       <!-- Header content -->
-      <div class="ui segment">
-        <img class="ui centered medium image" src="./assets/img/logo.png" />
+      <div id="headerSegment"> <!-- class="ui segment" -->
+            <!-- <img class="ui centered medium image" src="./assets/img/logo.png" /> -->
+            <img class ="dishIcon" src="./assets/img/restaurant.png">
+            <h1>MealMate</h1>
       </div>
 
       <!-- Test Menu!!! -->
