@@ -120,15 +120,26 @@ body {
   .landing-page h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: var(--citrus);
   }
   
   .landing-page p {
     font-size: 1.25rem;
     margin-bottom: 2rem;
+    font-weight: 700;
+    color: var(--cucumber);
   }
   
   #startButton {
     background-color: var(--honeymustard);
     color: var(--cream);
+  }
+
+
+  /* FOOTER STYLING */
+  footer a{
+    color: var(--citrus);
+    display: flex;
+    justify-content: center;
   }
   
