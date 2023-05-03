@@ -4,7 +4,7 @@ $(document).ready(function() {
  
     var searchBox = $('#searchInput');
  
-    $('#toggleSidebar').click(function() {
+    $('#startButton').click(function() {
         $('.ui.sidebar').sidebar('toggle');
     })
 
