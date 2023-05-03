@@ -14,6 +14,7 @@ $(document).ready(function () {
     $(".pusher").show();
   });
 
+
   // Modal button
   $('#show-modal-btn').click(function() {
     $('#my-modal').modal('show');
@@ -72,6 +73,7 @@ $("#searchButton").click(function () {
 // Sidebar getHistory
 function saveResults() {
   // Save the string in LocalStorage
+
   localStorage.setItem('savedHistory', JSON.stringify(searchHistory));
 
   $("#searchHistory").empty();
@@ -231,21 +233,19 @@ $('#searchButton').click(function () {
   }
 });
 
+  var testSearchEl = document.getElementById("testSearch");
+  var testHisEl = document.getElementById("testHistory");
+  var testCHEl = document.getElementById("testClearHis");
+  var testDEl = document.getElementById("testDetails");
 
-var testSearchEl = document.getElementById('testSearch');
-var testHisEl = document.getElementById('testHistory');
-var testCHEl = document.getElementById('testClearHis');
-var testDEl = document.getElementById('testDetails');
-
-
-// ------------------------------------
-//        Create-a-card Function
-// ------------------------------------
-// Creates a new card based on the
-// arguments given to the function.
-// ------------------------------------
-function newCard(cusineTitle, cuisineImage, wineTitle, wineImage) {
-  var cardHTML = `
+  // ------------------------------------
+  //        Create-a-card Function
+  // ------------------------------------
+  // Creates a new card based on the
+  // arguments given to the function.
+  // ------------------------------------
+  function newCard(cusineTitle, cuisineImage, wineTitle, wineImage) {
+    var cardHTML = `
   <div class="card">
     <div class="ui divided equal width grid">
       <div class="column">
@@ -338,5 +338,4 @@ searchHistory.forEach(function (item) {
 
 
 $(".longer.modal").modal("show");
-
 
