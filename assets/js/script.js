@@ -31,6 +31,11 @@ $(document).ready(function() {
        $('#searchInput').val();
     });
 }); 
+
+// Responses without this status will trigger error conditions
+$.fn.api.settings.successTest = function(response) {
+    return response.status == 'OK';
+}
        
 // An array keeping the history
 var searchHistory = [];
@@ -196,7 +201,7 @@ function duplicateCheck(input) {
 
   searchHistory.forEach(function (item) {
     var historyBtn = $("<button>")
-      .addClass("ui button search-history-btn")
+      .addClass("search-history-btn")
       .text(item)
       .attr("data-search", item);
     $("#searchHistory").append(historyBtn);
