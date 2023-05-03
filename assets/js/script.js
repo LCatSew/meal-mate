@@ -14,9 +14,8 @@ $(document).ready(function () {
     $(".pusher").show();
   });
 
-
   // Modal button
-  $('#show-modal-btn').click(function() {
+  $('#show-modal-btn').click(function () {
     $('#my-modal').modal('show');
   });
 
@@ -25,22 +24,85 @@ $(document).ready(function () {
   $("#recipeForm").submit(function (event) {
     event.preventDefault();
     var searchInput = searchBox.val();
+
+    var result = {}; // Important!! Empty object to put cocktail in. Best to rename it later.
+    console.log("Test search clicked!");
+
+    // Temp serach term solely for test button
     // ajax call to request data from edamam
-    $.ajax("https://api.edamam.com/search", {
+    $.ajax('https://api.edamam.com/search', {
       data: {
         q: searchInput,
-        app_id: "aa26a8c0",
-        app_key: "4e5724065c8d4517c49380b4618935d5",
+        app_id: 'aa26a8c0',
+        app_key: '4e5724065c8d4517c49380b4618935d5'
       },
       success: function (data) {
         var recipes = data.hits;
 
+        // Iterates through recipes to put each recipe into pairCocktail
+        // to get search query for TCDB.
         for (var i = 0; i < recipes.length; i++) {
           var recipe = recipes[i].recipe;
-          console.log("Recipe:", recipe.label);
+          dataCocktail = pairCocktail(recipe);
+
+          // If statement to see if it needs to perform search or to get random.
+          if (dataCocktail != "random") {
+            $.ajax({
+              url: 'https://www.thecocktaildb.com/api/json/v1/1/search.php',
+              data: { s: dataCocktail },
+              success: function (data) {
+                var drinks = data.drinks;
+                var randomDrink = Math.floor(Math.random() * drinks.length);
+                result.title = drinks[randomDrink].strDrink;
+                result.image = drinks[randomDrink].strDrinkThumb;
+
+                for (var x = 0; x < recipes.length; x++) { // Had to do this since ajax is async, Might come up with better later
+                  recipe = recipes[x].recipe;
+                  console.log("Recipe label:");
+                  var recipeTitle = recipe.label;
+                  console.log(recipeTitle);
+                  console.log("Recipe image:");
+                  var recipeImage = recipe.image;
+                  console.log(recipeImage);
+                  dataCocktail = pairCocktail(recipe);
+
+                  newCard(recipeTitle, recipeImage, result.title, result.image);
+
+                }
+              }
+            });
+          } else {
+            $.ajax({
+              url: 'https://www.thecocktaildb.com/api/json/v1/1/random.php',
+              dataType: 'json',
+              success: function (data) {
+                var drinks = data.drinks;
+                var randomDrink = Math.floor(Math.random() * drinks.length);
+                var finalDrink = drinks[randomDrink].strDrink;
+
+                result.title = drinks[randomDrink].strDrink;
+                result.image = drinks[randomDrink].strDrinkThumb;
+
+                for (var x = 0; x < recipes.length; x++) { // Refer to line 170
+                  recipe = recipes[x].recipe;
+                  console.log("Recipe label:");
+                  var recipeTitle = recipe.label;
+                  console.log(recipeTitle);
+                  console.log("Recipe image:");
+                  var recipeImage = recipe.image;
+                  console.log(recipeImage);
+                  dataCocktail = pairCocktail(recipe);
+
+                  newCard(recipeTitle, recipeImage, result.title, result.image);
+
+                }
+              }
+            });
+          }
         }
-      },
+      }
     });
+    
     $("#searchInput").val();
   });
 });
@@ -73,14 +135,13 @@ $("#searchButton").click(function () {
 // Sidebar getHistory
 function saveResults() {
   // Save the string in LocalStorage
-
   localStorage.setItem('savedHistory', JSON.stringify(searchHistory));
 
   $("#searchHistory").empty();
 
   searchHistory.forEach(function (item) {
     var historyBtn = $("<button>")
-      .addClass("ui button search-history-btn")
+      .addClass("search-history-btn")
       .text(item)
       .attr("data-search", item);
     $("#searchHistory").append(historyBtn);
@@ -233,19 +294,21 @@ $('#searchButton').click(function () {
   }
 });
 
-  var testSearchEl = document.getElementById("testSearch");
-  var testHisEl = document.getElementById("testHistory");
-  var testCHEl = document.getElementById("testClearHis");
-  var testDEl = document.getElementById("testDetails");
 
-  // ------------------------------------
-  //        Create-a-card Function
-  // ------------------------------------
-  // Creates a new card based on the
-  // arguments given to the function.
-  // ------------------------------------
-  function newCard(cusineTitle, cuisineImage, wineTitle, wineImage) {
-    var cardHTML = `
+var testSearchEl = document.getElementById('testSearch');
+var testHisEl = document.getElementById('testHistory');
+var testCHEl = document.getElementById('testClearHis');
+var testDEl = document.getElementById('testDetails');
+
+
+// ------------------------------------
+//        Create-a-card Function
+// ------------------------------------
+// Creates a new card based on the
+// arguments given to the function.
+// ------------------------------------
+function newCard(cusineTitle, cuisineImage, wineTitle, wineImage) {
+  var cardHTML = `
   <div class="card">
     <div class="ui divided equal width grid">
       <div class="column">
@@ -338,4 +401,5 @@ searchHistory.forEach(function (item) {
 
 
 $(".longer.modal").modal("show");
+
 
