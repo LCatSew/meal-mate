@@ -3,6 +3,10 @@
 $(document).ready(function () {
   var searchBox = $("#searchInput");
 
+  $('#toggleSidebar').click(function () {
+    $('.ui.sidebar').sidebar('toggle');
+  })
+
   $("#startButton").click(function () {
     $(".ui.sidebar").sidebar("toggle");
   });
@@ -22,13 +26,6 @@ $(document).ready(function () {
     $(".pusher").show();
 
   });
-
-
-  // Modal button
-  $('#show-modal-btn').click(function () {
-    $('#my-modal').modal('show');
-  });
-
 
   // This code handles the form submission for the sidebar input
   $("#recipeForm").submit(function (event) {
@@ -329,24 +326,3 @@ function pairCocktail(cuisineData) {
 
   return chosenDrink;
 };
-
-// ------------------------------------
-//          Details Modal
-// ------------------------------------
-// Returns details of the recipe and
-// pairing. Details will come from
-// pairCocktail().
-// ------------------------------------
-
-$("#searchHistory").empty();
-
-searchHistory.forEach(function (item) {
-  var historyBtn = $("<button>")
-    .addClass("search-history-btn")
-    .text(item)
-    .attr("data-search", item);
-  $("#searchHistory").append(historyBtn);
-});
-
-
-$(".longer.modal").modal("show");  

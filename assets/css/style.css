@@ -140,6 +140,14 @@ body {
     justify-content: center;
     flex-direction: column;
   }
+
+  #toggleSidebar {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+}
+
   .card {
     width: 60vw;
     height: auto;
@@ -173,4 +181,5 @@ body {
     display: flex;
     justify-content: center;
   }
+  
   
