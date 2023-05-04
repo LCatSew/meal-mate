@@ -14,15 +14,19 @@ MealMate is a cocktail pairing application that seeks to solve the common proble
 
 ## Usage
 Welcome Screen
+
 ![Logo](./screenshots/main.png)
 
 Using the sidebar:
+
 ![Logo](./screenshots/side.gif)
 
 Search history:
+
 ![Logo](./screenshots/search.png)
 
 Viewing search results:
+
 ![Logo](./screenshots/card.png)
 
 
