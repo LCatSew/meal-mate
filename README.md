@@ -21,14 +21,6 @@ Using the sidebar:
 
 ![Logo](./screenshots/side.gif)
 
-Search history:
-
-![Logo](./screenshots/search.png)
-
-Viewing search results:
-
-![Logo](./screenshots/card.png)
-
 
 
 
