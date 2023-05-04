@@ -1,17 +1,18 @@
 // main function that only runs when the DOM is ready
 // CURRENTLY NOT DONE WITH THIS FUNCTION
 $(document).ready(function () {
-    var searchBox = $("#searchInput");
-  
-    $("#startButton").click(function () {
-      $(".ui.sidebar").sidebar("toggle");
-    });
-  
-    // Hide landing page and show the rest of the content
-    $("#searchButton").click(function () {
-      $(".landing-page").hide();
-      $("#toggleSidebar").show();
-      $(".pusher").show();
+  var searchBox = $("#searchInput");
+
+  $("#startButton").click(function () {
+    $(".ui.sidebar").sidebar("toggle");
+  });
+
+  // Hide landing page and show the rest of the content
+  $("#searchButton").click(function () {
+    $(".landing-page").hide();
+    $("#toggleSidebar").show();
+    $(".pusher").show();
+  });
 
 
   // Hide landing page and show the rest of the content
@@ -21,6 +22,7 @@ $(document).ready(function () {
     $(".pusher").show();
 
   });
+
 
   // Modal button
   $('#show-modal-btn').click(function () {
@@ -202,7 +204,6 @@ $(document).ready(function () {
   });
 
 });
-
 
 // Responses without this status will trigger error conditions
 $.fn.api.settings.successTest = function (response) {
