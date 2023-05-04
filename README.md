@@ -9,7 +9,7 @@ MealMate is a cocktail pairing application that seeks to solve the common proble
 
 - Saves recent searches
 - Displays a preview for both drink and meal during searches
-- Displays details via a modal window
+
 
 
 ## Usage
