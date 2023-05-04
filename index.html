@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>MealMate</title>
   <meta charset="UTF-8" />
@@ -37,63 +38,63 @@
 
 <body>
   <!-- Sidebar content -->
-    <aside>
-        <div class="ui vertical inverted sidebar menu large" id="sidebar">
-            <div class="ui center aligned segment" id ="formBackground">
-            <form class="ui action input search" id="recipeForm">
-                <input class="prompt" type="text" id="searchInput" placeholder="Search..." />
-                <button class="ui icon button" id="searchButton">
-                <i class="search icon"></i>
-                </button>
-            </form>
-        </div>
+  <aside>
+    <div class="ui vertical inverted sidebar menu large" id="sidebar">
+      <div class="ui center aligned segment" id="formBackground">
+        <form class="ui action input search" id="recipeForm">
+          <input class="prompt" type="text" id="searchInput" placeholder="Search..." />
+          <button class="ui icon button" id="searchButton">
+            <i class="search icon"></i>
+          </button>
+        </form>
+      </div>
 
-        <!-- Temporary class until CSS implementation -->
-        <h3 class="item" id="shTitle">Search History:</h3>
-        <div id="searchHistory"></div>
-        </div>
-    </aside>
+      <!-- Temporary class until CSS implementation -->
+      <h3 class="item" id="shTitle">Search History:</h3>
+      <div id="searchHistory"></div>
+    </div>
+  </aside>
 
   <div class="pusher">
     <header>
       <!-- Header content -->
       <div id="headerSegment"> <!-- class="ui segment" -->
-            <!-- <img class="ui centered medium image" src="./assets/img/logo.png" /> -->
-            <img class ="dishIcon" src="./assets/img/restaurant.png">
-            <h1>MealMate</h1>
+        <!-- <img class="ui centered medium image" src="./assets/img/logo.png" /> -->
+        <img class="dishIcon" src="./assets/img/restaurant.png">
+        <h1>MealMate</h1>
       </div>
-
-      <!-- Test Menu!!! -->
-      <div id="testMenu"></div>
-
     </header>
 
     <main>
       <!-- Body content -->
+
+      <!-- Search button/Sidebar Toggle-->
+      <button class="ui button circular icon" id="toggleSidebar"><i class="big search icon"></i></button>
+
       <div class="landing-page">
         <h2>Welcome to MealMate!</h2>
         <p>Find the perfect meal and drink pairing for any occasion.</p>
         <button class="ui button" id="startButton">Get Started</button>
       </div>
-     
+
 
       <div class="pusher">
         <div class="ui link cards">
           <div id="searchResults"></div>
         </div>
         <div class="ui modal">
-            <i class="close icon"></i>
-            <div class="header">
-                <!--Modal Title-->
+          <i class="close icon"></i>
+          <div class="header">
+            <!--Modal Title-->
+          </div>
+          <div class="image content">
+            <div class="image">
+              <!--An image can appear on left-->
             </div>
-            <div class="image content">
-                <div class="image">
-                    <!--An image can appear on left-->
-                </div>
-                <div class="description">
-                    <!--A description can appear on the right-->
-                </div>
+            <div class="description">
+              <!--A description can appear on the right-->
             </div>
+          </div>
         </div>
       </div>
     </main>
@@ -101,7 +102,8 @@
 
   <footer>
     <!-- Footer content -->
-    <a href="https://www.flaticon.com/free-icons/plate" title="plate icons">Plate icons created by Freepik - Flaticon</a>
+    <a href="https://www.flaticon.com/free-icons/plate" title="plate icons">Plate icons created by Freepik -
+      Flaticon</a>
     <div id="edamam-badge" data-color="white"></div>
   </footer>
 
