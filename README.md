@@ -17,7 +17,7 @@ Welcome Screen
 ![Logo](./screenshots/main.png)
 
 Using the sidebar:
-![Logo](./screenshots/slide.gif)
+![Logo](./screenshots/side.gif)
 
 Search history:
 ![Logo](./screenshots/search.png)
