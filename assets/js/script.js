@@ -1,11 +1,18 @@
 // main function that only runs when the DOM is ready
 // CURRENTLY NOT DONE WITH THIS FUNCTION
 $(document).ready(function () {
-  var searchBox = $("#searchInput");
+    var searchBox = $("#searchInput");
+  
+    $("#startButton").click(function () {
+      $(".ui.sidebar").sidebar("toggle");
+    });
+  
+    // Hide landing page and show the rest of the content
+    $("#searchButton").click(function () {
+      $(".landing-page").hide();
+      $("#toggleSidebar").show();
+      $(".pusher").show();
 
-  $("#startButton").click(function () {
-    $(".ui.sidebar").sidebar("toggle");
-  });
 
   // Hide landing page and show the rest of the content
   $("#searchButton").click(function () {
